@@ -15,7 +15,6 @@ npm install --save lollipop-components
 ## Usage
 
 ```tsx
-import React from 'react'
 import { ExampleComponent } from 'lollipop-components'
 ;<ExampleComponent text='test' />
 ```
