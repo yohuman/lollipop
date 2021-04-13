@@ -2,6 +2,8 @@
 
 > rect ui component library
 
+![logo](https://github.com/yohuman/lollipop/blob/main/logo.png?raw=true)
+
 ## Demo
 
 http://lollipop.yohuman.io/
