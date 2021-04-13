@@ -4,9 +4,13 @@
 
 ![logo](https://github.com/yohuman/lollipop/blob/main/logo.png?raw=true)
 
-## Demo
+## Components
 
 http://lollipop.yohuman.io/
+
+## Demo
+
+http://things.yohuman.io/
 
 ## Install
 
