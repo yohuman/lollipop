@@ -21,8 +21,8 @@ npm install --save lollipop-components
 ## Usage
 
 ```tsx
-import { ExampleComponent } from 'lollipop-components'
-;<ExampleComponent text='test' />
+import {ExampleComponent} from 'lollipop-components';
+<ExampleComponent text='test' />
 ```
 
 ## License

@@ -1,7 +1,7 @@
 {
   "name": "lollipop-components",
-  "version": "1.0.0",
-  "description": "rect ui component library",
+  "version": "1.0.3",
+  "description": "A deliciously simple yet stylish, next.js UI component library.",
   "author": "yohuman",
   "license": "MIT",
   "repository": "yohuman/lollipop",
