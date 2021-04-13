@@ -1,8 +1,8 @@
 # lollipop
 
-> rect ui component library
-
 ![logo](https://github.com/yohuman/lollipop/blob/main/logo.png?raw=true)
+
+> A simple yet stylish, next.js UI component library.
 
 ## Components
 
