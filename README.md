@@ -2,7 +2,7 @@
 
 ![logo](https://github.com/yohuman/lollipop/blob/main/logo.png?raw=true)
 
-> A simple yet stylish, next.js UI component library.
+> A deliciously simple yet stylish, next.js UI component library.
 
 ## Components
 
