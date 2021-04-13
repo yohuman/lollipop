@@ -2,6 +2,10 @@
 
 > rect ui component library
 
+## Demo
+
+http://lollipop.yohuman.io/
+
 ## Install
 
 ```bash
@@ -13,7 +17,6 @@ npm install --save lollipop-components
 ```tsx
 import React from 'react'
 import { ExampleComponent } from 'lollipop-components'
-
 ;<ExampleComponent text='test' />
 ```
 
