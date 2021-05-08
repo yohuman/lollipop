@@ -33,8 +33,8 @@ export default function SocialLogin({
       xanoUrl = "",
       xanoPath = "/oauth/facebook/init",
       redirectUrl = "",
-      popUpWidth = 410,
-      popUpHeight = 500
+      popUpWidth = 515,
+      popUpHeight = 510
     } = facebook;
     const w = window.open(
       "",
