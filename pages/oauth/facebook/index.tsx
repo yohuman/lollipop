@@ -1,8 +1,5 @@
 export default function socialLogin() {
-  if (typeof global !== "undefined") {
-    const self = global.self;
-    self.close();
-  }
+  () => self.close();
 
   return (
     <main>
