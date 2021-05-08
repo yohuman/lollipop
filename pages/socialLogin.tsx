@@ -25,7 +25,7 @@ export default function socialLogin() {
         <SocialLogin
           facebook={{
             xanoUrl: "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb",
-            redirectUrl: "https://lollipop.yohuman.io/oauth/facebook/callback"
+            redirectUrl: "https://lollipop.yohuman.io/oauth/facebook/"
           }}
           clickGoogle={clickGoogle}
           clickApple={clickApple}
