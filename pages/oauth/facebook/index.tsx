@@ -1,5 +1,9 @@
 export default function socialLogin() {
-  self.close();
+  if (typeof global !== "undefined") {
+    const self = global.self;
+    self.close();
+  }
+
   return (
     <main>
       <div>Redirect</div>
