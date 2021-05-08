@@ -1,16 +1,35 @@
+import Link from "next/link";
+
 export default function index() {
   return (
     <main>
-      <a href="/shoppingHeader">
+      <img src="logo@2x.svg" />
+      <h6>A collection of self contained nextjs components</h6>
+      <Link href="/shoppingHeader">
         <div>Shopping Header</div>
-      </a>
-      <a href="/socialLogin">
-        <div>Social Login</div>
-      </a>
+      </Link>
+      <Link href="/socialLogin">
+        <div>Social Login </div>
+      </Link>
+      <br />
+      <Link href="/about/privacy">
+        <small>Privacy Policy </small>
+      </Link>{" "}
+      |{" "}
+      <Link href="/about/terms">
+        <small>Terms of Service </small>
+      </Link>
+      |{" "}
+      <Link href="/about/copyright">
+        <small>Copyright Policy </small>
+      </Link>
+      |{" "}
+      <Link href="/about/use">
+        <small>Fair Use Policy </small>
+      </Link>
       <style jsx>{`
-        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
-        * {
-          font-family: "Nunito", sans-serif;
+        main {
+          padding: 20px;
         }
       `}</style>
     </main>

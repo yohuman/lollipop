@@ -3,9 +3,6 @@ import DisplayMount from "./components/displayMount";
 import SocialLogin from "./components/socialLogin";
 
 export default function socialLogin() {
-  const clickFacebook = () => {
-    console.log("facebook");
-  };
   const clickGoogle = () => {
     console.log("google");
   };
@@ -26,7 +23,10 @@ export default function socialLogin() {
         markup={`<SocialLogin />`}
       >
         <SocialLogin
-          clickFacebook={clickFacebook}
+          facebook={{
+            xanoUrl: "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb",
+            redirectUrl: "https://lollipop.yohuman.io/oauth/facebook/callback"
+          }}
           clickGoogle={clickGoogle}
           clickApple={clickApple}
           clickTwitter={clickTwitter}

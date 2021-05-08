@@ -1,7 +1,13 @@
 import React, { MouseEvent } from "react";
 
 interface IProps {
-  clickFacebook?: (event: MouseEvent<HTMLButtonElement>) => void;
+  facebook?: {
+    xanoUrl: string;
+    xanoPath?: string;
+    redirectUrl: string;
+    popUpWidth?: number;
+    popUpHeight?: number;
+  };
   clickGoogle?: (event: MouseEvent<HTMLButtonElement>) => void;
   clickApple?: (event: MouseEvent<HTMLButtonElement>) => void;
   clickTwitter?: (event: MouseEvent<HTMLButtonElement>) => void;
@@ -11,7 +17,7 @@ interface IProps {
 }
 
 export default function SocialLogin({
-  clickFacebook,
+  facebook,
   clickGoogle,
   clickApple,
   clickTwitter,
@@ -19,10 +25,34 @@ export default function SocialLogin({
   or = false,
   orBackground = "white"
 }: IProps) {
+  const clickFacebook = async (e: {
+    screenX: React.ReactText;
+    screenY: React.ReactText;
+  }) => {
+    const {
+      xanoUrl = "",
+      xanoPath = "/oauth/facebook/init",
+      redirectUrl = "",
+      popUpWidth = 410,
+      popUpHeight = 500
+    } = facebook;
+    const w = window.open(
+      "",
+      "mywindow",
+      `width=${+popUpWidth},height=${+popUpHeight}`
+    );
+    w.moveTo(+e.screenX - 205, +e.screenY - 250);
+    const options = { method: "GET" };
+    const params = new URLSearchParams({ redirect_uri: redirectUrl });
+    const response = await fetch(`${xanoUrl}${xanoPath}?${params}`, options);
+    const url = await response.json();
+    w.location.href = url;
+  };
+
   return (
     <header className="container">
       <nav className="iner-container">
-        {clickFacebook && (
+        {facebook && (
           <button
             className="socialButtonsFacebook button"
             onClick={clickFacebook}
