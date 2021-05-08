@@ -1,4 +1,5 @@
 export default function socialLogin() {
+  self.close();
   return (
     <main>
       <div>Redirect</div>
