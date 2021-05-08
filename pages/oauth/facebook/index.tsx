@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 
 export default function socialLogin() {
-  useEffect(() => {
-    const test = () => {
-      close();
-    };
-    test();
-  }, []);
+  //   useEffect(() => {
+  //     const test = () => {
+  //       close();
+  //     };
+  //     test();
+  //   }, []);
 
   return (
     <main>
