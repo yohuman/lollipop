@@ -163,57 +163,66 @@ export default function ShoppingHeader({
                              value=""
                              className="mini-search"
                            />
-                           {searchResults.length >= 1 && searchText && (
-                             <div className="search-results-dropdown" ref={ref}>
-                               {itemTypeArray("item").map(
-                                 (item: any, index: number) => {
-                                   return (
-                                     <div
-                                       key={`item-search-result-${index}`}
-                                       className="search-result-item"
-                                       onClick={() => {
-                                         selectedResult(
-                                           itemTypeArray("item")[index]
-                                         );
-                                       }}
-                                     >
-                                       {makeMeBold(item.result, searchText)}
-                                     </div>
-                                   );
-                                 }
-                               )}
-                               <div className="search-people-title">People</div>
-                               {itemTypeArray("person").map(
-                                 (item: any, index: number) => {
-                                   return (
-                                     <div
-                                       key={`person-search-result-${index}`}
-                                       className="search-result-person"
-                                       onClick={() => {
-                                         selectedResult(
-                                           itemTypeArray("person")[index]
-                                         );
-                                       }}
-                                     >
-                                       <img
-                                         src={`${imageUrlPrefix}${item.id}${imageUrlPostfix}`}
-                                         alt={item.name}
-                                         className="search-result-avatar"
-                                       />
-                                       <span className="search-result-name">
-                                         {makeMeBold(item.name, searchText)}
-                                       </span>
-                                       <span className="search-result-username">
-                                         {"("}
-                                         {makeMeBold(item.username, searchText)}
-                                         {")"}
-                                       </span>
-                                     </div>
-                                   );
-                                 }
-                               )}
-                             </div>
-                           )}
+                           {searchResults && searchResults.length >= 1 &&
+                             searchText && (
+                               <div
+                                 className="search-results-dropdown"
+                                 ref={ref}
+                               >
+                                 {itemTypeArray("item").map(
+                                   (item: any, index: number) => {
+                                     return (
+                                       <div
+                                         key={`item-search-result-${index}`}
+                                         className="search-result-item"
+                                         onClick={() => {
+                                           selectedResult(
+                                             itemTypeArray("item")[index]
+                                           );
+                                         }}
+                                       >
+                                         {makeMeBold(item.result, searchText)}
+                                       </div>
+                                     );
+                                   }
+                                 )}
+                                 <div className="search-people-title">
+                                   People
+                                 </div>
+                                 {itemTypeArray("person").map(
+                                   (item: any, index: number) => {
+                                     return (
+                                       <div
+                                         key={`person-search-result-${index}`}
+                                         className="search-result-person"
+                                         onClick={() => {
+                                           selectedResult(
+                                             itemTypeArray("person")[index]
+                                           );
+                                         }}
+                                       >
+                                         <img
+                                           src={`${imageUrlPrefix}${item.id}${imageUrlPostfix}`}
+                                           alt={item.name}
+                                           className="search-result-avatar"
+                                         />
+                                         <span className="search-result-name">
+                                           {makeMeBold(item.name, searchText)}
+                                         </span>
+                                         <span className="search-result-username">
+                                           {"("}
+                                           {makeMeBold(
+                                             item.username,
+                                             searchText
+                                           )}
+                                           {")"}
+                                         </span>
+                                       </div>
+                                     );
+                                   }
+                                 )}
+                               </div>
+                             )}
                          </form>
                        </div>
                        <div className="sign-in">
