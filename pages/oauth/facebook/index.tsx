@@ -1,5 +1,12 @@
+import React, { useEffect } from "react";
+
 export default function socialLogin() {
-  () => self.close();
+  useEffect(() => {
+    const test = () => {
+      close();
+    };
+    test();
+  }, []);
 
   return (
     <main>
