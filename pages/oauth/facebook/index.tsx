@@ -8,8 +8,7 @@ export default function socialLogin() {
 
       const xanoUrl = "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb";
       const xanoPath = "/oauth/facebook/continue";
-      const redirectUrl = "https://lollipop.yohuman.io/";
-      // oauth/facebook/
+      const redirectUrl = "https://lollipop.yohuman.io/oauth/facebook/";
 
       const options = { method: "GET" };
       const params = new URLSearchParams({
@@ -19,6 +18,9 @@ export default function socialLogin() {
       const response = await fetch(`${xanoUrl}${xanoPath}?${params}`, options);
       const url = await response.json();
       if (url) console.log(url);
+
+      // Failed to load resource: the server responded with a status of 500 ()
+      // FATAL
 
       // close();
     };
