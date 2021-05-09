@@ -6,8 +6,7 @@ export default function socialLogin() {
 
   useEffect(() => {
     const test = () => {
-      console.log(router);
-      console.log(router.query);
+      console.log(router.asPath.split("?code=")[1]);
       // close();
     };
     test();
