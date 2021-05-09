@@ -1,14 +1,20 @@
 import React, { useEffect } from "react";
-import { useRouter } from "next/router";
 
 export default function socialLogin() {
-  const router = useRouter();
-
   useEffect(() => {
-    const test = () => {
-      // console.log(router.asPath.split("?code=")[1]);
+    const test = async () => {
       var urlParams = new URLSearchParams(window.location.search);
-      console.log(urlParams.get("code")); // "edit"
+      const xanoUrl = "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb";
+      const xanoPath = "/oauth/facebook/continue";
+      const redirectUrl = "https://lollipop.yohuman.io/oauth/facebook/";
+      const code = urlParams.get("code");
+
+      const options = { method: "GET" };
+      const params = new URLSearchParams({ redirect_uri: redirectUrl, code });
+      const response = await fetch(`${xanoUrl}${xanoPath}?${params}`, options);
+      const url = await response.json();
+      console.log(url);
+
       // close();
     };
     test();
