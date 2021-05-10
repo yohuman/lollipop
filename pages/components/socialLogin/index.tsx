@@ -14,6 +14,8 @@ interface IProps {
   clickAnchor?: (event: MouseEvent<HTMLButtonElement>) => void;
   or?: boolean;
   orBackground?: string;
+  prefix?: string;
+  popup?: "desktop" | "mobile" | "both";
 }
 
 export default function SocialLogin({
@@ -23,7 +25,9 @@ export default function SocialLogin({
   clickTwitter,
   clickAnchor,
   or = false,
-  orBackground = "white"
+  orBackground = "white",
+  prefix = "Connect with",
+  popup = "desktop"
 }: IProps) {
   const clickFacebook = async (e: {
     screenX: React.ReactText;
@@ -57,18 +61,18 @@ export default function SocialLogin({
             className="socialButtonsFacebook button"
             onClick={clickFacebook}
           >
-            <span>Connect with</span> Facebook
+            <span>{prefix}</span> Facebook
           </button>
         )}
         {clickGoogle && (
           <button className="socialButtonsGoogle button" onClick={clickGoogle}>
-            <span>Connect with</span> Google
+            <span>{prefix}</span> Google
           </button>
         )}
 
         {clickApple && (
           <button className="socialButtonsApple button" onClick={clickApple}>
-            <span>Connect with</span> Apple
+            <span>{prefix}</span> Apple
           </button>
         )}
 
@@ -77,13 +81,13 @@ export default function SocialLogin({
             className="button socialButtonsTwitter"
             onClick={clickTwitter}
           >
-            <span>Connect with</span> Twitter
+            <span>{prefix}</span> Twitter
           </button>
         )}
 
         {clickAnchor && (
           <button className="button socialButtonsAnchor" onClick={clickAnchor}>
-            <span>Connect with</span> Anchor
+            <span>{prefix}</span> Anchor
           </button>
         )}
 
