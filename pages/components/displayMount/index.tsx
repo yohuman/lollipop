@@ -1,3 +1,4 @@
+import Link from "next/link";
 var pretty = require("pretty");
 
 interface IProps {
@@ -6,6 +7,7 @@ interface IProps {
   description: string;
   markup: string;
   params?: any;
+  github?: string;
 }
 
 export default function DisplayMount({
@@ -13,31 +15,46 @@ export default function DisplayMount({
   title,
   description,
   markup,
-  params
+  params,
+  github
 }: IProps) {
   return (
     <main>
       <div className="displayMount">
         <div className="topContainer">
           {title}
-          <div className="descriptionBlock">{description}</div>
+
+          <div className="descriptionBlock">
+            <div>{description}</div>
+            {github && (
+              <Link href={github}>
+                <div className="github">View on GitHub</div>
+              </Link>
+            )}
+          </div>
         </div>
 
         <div className="componentDemo">{children}</div>
         <div className="codeBlock">
           <code>{pretty(markup)}</code>
         </div>
+
         <div className="params">
-          <div className="grid-header">
-            <div>Parameter Name</div>
-            <div>Description</div>
-            <div>Default</div>
-          </div>
+          {params && (
+            <div className="grid-header">
+              <div>Parameter Name</div>
+              <div>Description</div>
+              <div>Default</div>
+            </div>
+          )}
           {params &&
             params.map((param: any, index: number) => {
               return (
                 <div key={`param-${index}`} className="grid">
-                  <div>{param.name}</div>
+                  <div>
+                    {param.required && <span>*</span>}
+                    {param.name}
+                  </div>
                   <div>
                     <div>{param.type}</div>
                     <div>{param.description}</div>
@@ -50,11 +67,18 @@ export default function DisplayMount({
       </div>
 
       <style jsx>{`
+        .github {
+          cursor: pointer;
+          font-size: 11px;
+          margin-top: 20px;
+        }
         .grid-header {
           margin: 20px;
           display: grid;
           grid-template-columns: 2fr 3fr 1fr;
           grid-gap: 20px;
+          font-weight: bold;
+          font-size: 14px;
         }
         .grid {
           margin: 20px;

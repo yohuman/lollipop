@@ -19,7 +19,8 @@ export default function socialLogin() {
     <main>
       <DisplayMount
         title="Social Login"
-        description="Fully responsive, login with facebook or google"
+        github="https://github.com/yohuman/lollipop/blob/main/pages/components/socialLogin/index.tsx"
+        description="Ideal for displaying in a modal on dektop or directly on the page for mobile"
         markup={`<SocialLogin facebook={{
             xanoUrl: "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb",
             redirectUrl: "https://lollipop.yohuman.io/oauth/facebook/"
@@ -30,64 +31,74 @@ export default function socialLogin() {
             type: "enum: 'desktop' | 'mobile' | 'both'",
             description:
               "Is the user prompted to login via a popup opposed to a redirect for the set context",
-            default: "desktop"
+            default: "desktop",
+            required: false
           },
           {
             name: "prefix",
             type: "string",
             description:
               "The text prefixed to the social provider in the button",
-            default: "Connect with"
+            default: "Connect with",
+            required: false
           },
           {
             name: "or",
             type: "boolean",
             description: "True if you want to display the 'or' divider",
-            default: "false"
+            default: "false",
+            required: false
           },
           {
             name: "orBackground",
             type: "string",
             description:
               "Name or hex string  representing the color of the background behind the word 'or'",
-            default: "white"
+            default: "white",
+            required: false
           },
           {
             name: "facebook",
             type: "object",
             description: "An object with the settings for the facebook login",
-            default: ""
+            default: "",
+            required: false
           },
           {
             name: "facebook.xanoUrl",
             type: "string",
             description: "The base URL for the xano API",
-            default: ""
+            default: "",
+            required: true
           },
           {
             name: "facebook.xanoPath",
             type: "string",
             description: "The path to the Xano oauth facebook API",
-            default: "/oauth/facebook/init"
+            default: "/oauth/facebook/init",
+            required: false
           },
           {
             name: "facebook.redirectUrl",
             type: "string",
             description:
               "The redirect URL you entered into develoers.facebook.com",
-            default: ""
+            default: "",
+            required: true
           },
           {
             name: "facebook.popUpWidth",
             type: "number",
             description: "The width of the popup",
-            default: "515"
+            default: "515",
+            required: false
           },
           {
             name: "facebook.popUpHeight",
             type: "number",
             description: "The hieght of the popup",
-            default: "505"
+            default: "505",
+            required: false
           }
         ]}
       >

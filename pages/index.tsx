@@ -5,17 +5,19 @@ export default function index() {
     <main>
       <div>
         <img src="logo@2x.svg" />
-        <h6>A collection of delicious nextjs components</h6>
+        <h5>A collection of delicious nextjs components</h5>
       </div>
-      <div>
+
+      <ul>
         <Link href="/shoppingHeader">
-          <div className="link">Shopping Header</div>
+          <li className="link">Shopping Header</li>
         </Link>
         <Link href="/socialLogin">
-          <div className="link">Social Login </div>
+          <li className="link">Social Login </li>
         </Link>
-      </div>
-      <div>
+      </ul>
+
+      <footer>
         <Link href="/about/privacy">
           <small className="link">Privacy Policy </small>
         </Link>{" "}
@@ -29,10 +31,14 @@ export default function index() {
         </Link>
         |{" "}
         <Link href="/about/use">
-          <small className="link">Fair Use Policy </small>
+          <small className="link">Acceptable Use Policy </small>
         </Link>
-      </div>
+      </footer>
       <style jsx>{`
+        footer {
+          font-size: 12px;
+        }
+
         main {
           box-sizing: border-box;
           padding: 20px;
