@@ -22,7 +22,7 @@ export default function socialLogin() {
         github="https://github.com/yohuman/lollipop/blob/main/pages/components/socialLogin/index.tsx"
         description="Ideal for displaying in a modal on dektop or directly on the page for mobile"
         markup={`<SocialLogin facebook={{
-            xanoUrl: "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb",
+            xanoUrl: "https://x8ki-letl-twmt.n7.xano.io/api:KIq0EWex",
             redirectUrl: "https://lollipop.yohuman.io/oauth/facebook/"
           }}/>`}
         params={[
@@ -104,7 +104,7 @@ export default function socialLogin() {
       >
         <SocialLogin
           facebook={{
-            xanoUrl: "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb",
+            xanoUrl: "https://x8ki-letl-twmt.n7.xano.io/api:KIq0EWex",
             redirectUrl: "https://lollipop.yohuman.io/oauth/facebook/"
           }}
           clickGoogle={clickGoogle}

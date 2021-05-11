@@ -6,7 +6,7 @@ export default function socialLogin() {
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get("code");
 
-      const xanoUrl = "https://x8ki-letl-twmt.n7.xano.io/api:Ah5nAblb";
+      const xanoUrl = "https://x8ki-letl-twmt.n7.xano.io/api:KIq0EWex";
       const xanoPath = "/oauth/facebook/continue";
       const redirectUrl = "https://lollipop.yohuman.io/oauth/facebook/";
 
