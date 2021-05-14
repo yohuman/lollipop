@@ -16,13 +16,11 @@ export default function socialLogin() {
         code
       });
       const response = await fetch(`${xanoUrl}${xanoPath}?${params}`, options);
-      const url = await response.json();
-      if (url) console.log(url);
-
-      // Failed to load resource: the server responded with a status of 500 ()
-      // FATAL
-
-      // close();
+      const res = await response.json();
+      const { token, name } = res;
+      localStorage.setItem("token", token);
+      localStorage.setItem("name", name);
+      close();
     };
     callXano();
   }, []);
