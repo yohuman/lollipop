@@ -31,3 +31,7 @@ export default function socialLogin() {
     </main>
   );
 }
+
+
+// client id : 1031700813725-9650tb0qcjldcmvsnb843b85mabu7t1e.apps.googleusercontent.com
+// client secret;   MZT4E-RkYT9UiH7Lqf73-_id

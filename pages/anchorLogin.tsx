@@ -1,0 +1,31 @@
+import React from "react";
+import DisplayMount from "./components/displayMount";
+import AnchorLogin from "./components/anchorLogin";
+
+export default function anchorLogin() {
+  return (
+    <main>
+      <DisplayMount
+        title="Anchor Login"
+        github="https://github.com/yohuman/lollipop/blob/main/pages/components/anchorLogin/index.tsx"
+        description="Ideal for displaying in a modal on dektop or directly on the page for mobile"
+        markup={`<AnchorLogin anchor={{
+            chainId: "2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840"
+          }}/>`}
+      >
+        <AnchorLogin
+          anchor={{
+            chainId:
+              "2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840"
+          }}
+        />
+      </DisplayMount>
+      <style jsx>{`
+        @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
+        * {
+          font-family: "Nunito", sans-serif;
+        }
+      `}</style>
+    </main>
+  );
+}

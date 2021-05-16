@@ -15,6 +15,9 @@ export default function index() {
         <Link href="/socialLogin">
           <li className="link">Social Login </li>
         </Link>
+        <Link href="/anchorLogin">
+          <li className="link">Anchor Login </li>
+        </Link>
       </ul>
 
       <footer>

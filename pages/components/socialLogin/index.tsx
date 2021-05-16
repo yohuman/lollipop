@@ -85,12 +85,6 @@ export default function SocialLogin({
           </button>
         )}
 
-        {clickAnchor && (
-          <button className="button socialButtonsAnchor" onClick={clickAnchor}>
-            <span>{prefix}</span> Anchor
-          </button>
-        )}
-
         {or && (
           <div className="orBar">
             <span className="orTxt">or</span>
