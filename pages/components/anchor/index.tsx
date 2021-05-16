@@ -4,10 +4,10 @@ import AnchorLinkBrowserTransport from "anchor-link-browser-transport";
 
 interface IProps {
   text?: string;
-  net: "eos" | "jungle3";
+  net?: "eos" | "jungle3";
   dappName?: string;
   setLinkSession: any;
-  setTransactionId: any;
+  setTransactionId?: any;
   linkSession?: any;
   error: any;
   action?: any;
@@ -46,7 +46,9 @@ export default function Anchor({
         setLinkSession(res.session);
       } else if (linkSession) {
         const transaction = await linkSession.transact({ action });
-        if (transaction && transaction.id) setTransactionId(transaction.id);
+        if (transaction && transaction.id && setTransactionId) {
+          setTransactionId(transaction.id);
+        }
       }
     } catch (err) {
       error(err);

@@ -4,6 +4,7 @@ import Anchor from "./components/anchor";
 
 export default function anchor() {
   const [linkSession, setLinkSession] = useState<any>();
+  const [transactionId, setTransactionId] = useState<any>();
   let action: any;
 
   if (linkSession) {
@@ -37,8 +38,10 @@ export default function anchor() {
             error={error}
             text={"Sign with Anchor"}
             action={action}
+            setTransactionId={setTransactionId}
           />
         )}
+        {transactionId && <div>transactionId</div>}
 
         {!linkSession && (
           <Anchor setLinkSession={setLinkSession} error={error} />
