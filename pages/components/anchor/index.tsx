@@ -3,31 +3,51 @@ import AnchorLink from "anchor-link";
 import AnchorLinkBrowserTransport from "anchor-link-browser-transport";
 
 interface IProps {
-  prefix?: string;
-  chainId?: string;
-  nodeUrl?: string;
+  text?: string;
+  net: "eos" | "jungle3";
   dappName?: string;
-  identity: any;
+  setLinkSession: any;
+  setTransactionId: any;
+  linkSession?: any;
   error: any;
+  action?: any;
 }
 
-export default function AnchorLogin({
-  chainId = "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
-  nodeUrl = "https://eos.greymass.com",
+export default function Anchor({
+  net = "eos",
   dappName = "mydapp",
-  prefix = "Connect with",
-  identity,
-  error
+  text = "Connect with Anchor",
+  setLinkSession,
+  setTransactionId,
+  linkSession,
+  error,
+  action
 }: IProps) {
   const clickAnchor = async () => {
+    let chainId: string;
+    let nodeUrl: string;
+    if (net === "eos") {
+      chainId =
+        "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906";
+      nodeUrl = "https://eos.greymass.com";
+    } else if (net === "jungle3") {
+      chainId =
+        "2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840";
+      nodeUrl = "https://jungle3.cryptolions.io:443";
+    }
     try {
-      const transport = new AnchorLinkBrowserTransport();
-      const link = new AnchorLink({
-        transport,
-        chains: [{ chainId, nodeUrl }]
-      });
-      const res = await link.login(dappName);
-      identity(res);
+      if (!linkSession) {
+        const transport = new AnchorLinkBrowserTransport();
+        const link = new AnchorLink({
+          transport,
+          chains: [{ chainId, nodeUrl }]
+        });
+        const res = await link.login(dappName);
+        setLinkSession(res.session);
+      } else if (linkSession) {
+        const transaction = await linkSession.transact({ action });
+        if (transaction && transaction.id) setTransactionId(transaction.id);
+      }
     } catch (err) {
       error(err);
     }
@@ -37,7 +57,7 @@ export default function AnchorLogin({
       <nav className="iner-container">
         {clickAnchor && (
           <button className="button socialButtonsAnchor" onClick={clickAnchor}>
-            <span>{prefix}</span> Anchor
+            <span>{text}</span>
           </button>
         )}
       </nav>
