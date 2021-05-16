@@ -16,9 +16,17 @@ export default function AnchorLogin({
   prefix = "Connect with"
 }: IProps) {
   const clickAnchor = async () => {
-    const transport = new AnchorLinkBrowserTransport();
-    const link = new AnchorLink({ transport, chains: [{ chainId, nodeUrl }] });
-    const identity = await link.login(dappName);
+    try {
+      const transport = new AnchorLinkBrowserTransport();
+      const link = new AnchorLink({
+        transport,
+        chains: [{ chainId, nodeUrl }]
+      });
+      const identity = await link.login(dappName);
+      console.log(identity);
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <header className="container">
