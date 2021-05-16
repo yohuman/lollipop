@@ -3,6 +3,12 @@ import DisplayMount from "./components/displayMount";
 import AnchorLogin from "./components/anchorLogin";
 
 export default function anchorLogin() {
+  const identity = (e: any) => {
+    console.log(e);
+  };
+  const error = (e: any) => {
+    console.log(e);
+  };
   return (
     <main>
       <DisplayMount
@@ -16,12 +22,7 @@ export default function anchorLogin() {
   prefix : "Connect with"
           }}/>`}
       >
-        <AnchorLogin
-          anchor={{
-            chainId:
-              "2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840"
-          }}
-        />
+        <AnchorLogin identity={identity} error={error} />
       </DisplayMount>
       <style jsx>{`
         @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");

@@ -7,13 +7,17 @@ interface IProps {
   chainId?: string;
   nodeUrl?: string;
   dappName?: string;
+  identity: any;
+  error: any;
 }
 
 export default function AnchorLogin({
   chainId = "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
   nodeUrl = "https://eos.greymass.com",
   dappName = "mydapp",
-  prefix = "Connect with"
+  prefix = "Connect with",
+  identity,
+  error
 }: IProps) {
   const clickAnchor = async () => {
     try {
@@ -22,10 +26,10 @@ export default function AnchorLogin({
         transport,
         chains: [{ chainId, nodeUrl }]
       });
-      const identity = await link.login(dappName);
-      console.log(identity);
+      const res = await link.login(dappName);
+      identity(res);
     } catch (err) {
-      console.log(err);
+      error(err);
     }
   };
   return (
