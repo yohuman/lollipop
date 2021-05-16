@@ -5,46 +5,45 @@ import Anchor from "./components/anchor";
 export default function anchor() {
   const [linkSession, setLinkSession] = useState<any>();
   const [transactionId, setTransactionId] = useState<any>();
+  const [error, setError] = useState<any>();
   let action: any;
 
   if (linkSession) {
     action = {
       account: "eosio",
-      name: "voteproducer",
       authorization: [linkSession.auth],
       data: {
-        voter: linkSession.auth.actor,
+        producers: [],
         proxy: "greymassvote",
-        producers: []
-      }
+        voter: linkSession.auth.actor
+      },
+      name: "voteproducer"
     };
   }
 
-  const error = (e: any) => {
-    console.log(e);
-  };
   return (
     <main>
       <DisplayMount
-        title="Anchor"
-        github="https://github.com/yohuman/lollipop/blob/main/pages/components/anchor/index.tsx"
         description="Login and sign transactions with the EOS Anchor wallet"
+        github="https://github.com/yohuman/lollipop/blob/main/pages/components/anchor/index.tsx"
         markup={`<Anchor anchor={{net : "eos"}}/>`}
+        title="Anchor"
       >
         {linkSession && (
           <Anchor
-            setLinkSession={setLinkSession}
-            linkSession={linkSession}
-            error={error}
-            text={"Sign with Anchor"}
             action={action}
+            buttonText={"Sign with Anchor"}
+            linkSession={linkSession}
+            setError={setError}
+            setLinkSession={setLinkSession}
             setTransactionId={setTransactionId}
           />
         )}
         {transactionId && <div>transactionId</div>}
+        {error && <div>error</div>}
 
         {!linkSession && (
-          <Anchor setLinkSession={setLinkSession} error={error} />
+          <Anchor setError={setError} setLinkSession={setLinkSession} />
         )}
       </DisplayMount>
       <style jsx>{`

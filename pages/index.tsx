@@ -15,7 +15,7 @@ export default function index() {
         <Link href="/socialLogin">
           <li className="link">Social Login </li>
         </Link>
-        <Link href="/anchorLogin">
+        <Link href="/anchor">
           <li className="link">Anchor</li>
         </Link>
       </ul>
