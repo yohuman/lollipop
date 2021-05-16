@@ -25,10 +25,10 @@ export default function anchor() {
   return (
     <main>
       <DisplayMount
-        title="Anchor Login"
+        title="Anchor"
         github="https://github.com/yohuman/lollipop/blob/main/pages/components/anchor/index.tsx"
-        description="Login with the EOS Anchor wallet"
-        markup={`<AnchorLogin anchor={{net : "eos"}}/>`}
+        description="Login and sign transactions with the EOS Anchor wallet"
+        markup={`<Anchor anchor={{net : "eos"}}/>`}
       >
         {linkSession && (
           <Anchor
