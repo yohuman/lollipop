@@ -31,7 +31,7 @@ export default function anchor() {
       >
         {linkSession && (
           <Anchor
-            action={action}
+            actionToSign={action}
             buttonText={"Sign transaction with Anchor"}
             linkSession={linkSession}
             setError={setError}

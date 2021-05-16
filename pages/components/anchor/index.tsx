@@ -3,7 +3,7 @@ import AnchorLink from "anchor-link";
 import AnchorLinkBrowserTransport from "anchor-link-browser-transport";
 
 interface IProps {
-  action?: any;
+  actionToSign?: any;
   buttonText?: string;
   dappName?: string;
   linkSession?: any;
@@ -14,7 +14,7 @@ interface IProps {
 }
 
 export default function Anchor({
-  action,
+  actionToSign,
   buttonText = "Connect with Anchor",
   dappName = "mydapp",
   linkSession,
@@ -46,7 +46,7 @@ export default function Anchor({
         setLinkSession(res.session);
       } else if (linkSession) {
         const transaction = await linkSession.transact({
-          action
+          actionToSign
         });
         if (transaction && transaction.id && setTransactionId) {
           setTransactionId(transaction.id);
