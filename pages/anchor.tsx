@@ -26,7 +26,7 @@ export default function anchor() {
     <main>
       <DisplayMount
         title="Anchor Login"
-        github="https://github.com/yohuman/lollipop/blob/main/pages/components/anchorLogin/index.tsx"
+        github="https://github.com/yohuman/lollipop/blob/main/pages/components/anchor/index.tsx"
         description="Login with the EOS Anchor wallet"
         markup={`<AnchorLogin anchor={{net : "eos"}}/>`}
       >
