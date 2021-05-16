@@ -4,7 +4,7 @@ import Anchor from "./components/anchor";
 
 export default function anchor() {
   const [linkSession, setLinkSession] = useState<any>();
-  const [transactionId, setTransactionId] = useState<any>();
+  const [transactionId, setTransactionId] = useState<string>("");
   const [error, setError] = useState<any>();
   let action: any;
 

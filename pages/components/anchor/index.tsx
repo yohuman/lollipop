@@ -8,9 +8,9 @@ interface IProps {
   dappName?: string;
   linkSession?: any;
   net?: "eos" | "jungle3";
-  setError: any;
-  setLinkSession: any;
-  setTransactionId?: Dispatch<SetStateAction<any>>;
+  setError: Dispatch<SetStateAction<any>>;
+  setLinkSession: Dispatch<SetStateAction<any>>;
+  setTransactionId?: Dispatch<SetStateAction<string>>;
 }
 
 export default function Anchor({
