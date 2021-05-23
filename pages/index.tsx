@@ -13,10 +13,13 @@ export default function index() {
           <li className="link">Shopping Header</li>
         </Link>
         <Link href="/socialLogin">
-          <li className="link">Social Login </li>
+          <li className="link">Social Login</li>
         </Link>
         <Link href="/anchor">
           <li className="link">Anchor</li>
+        </Link>
+        <Link href="/swiper">
+          <li className="link">Swiper</li>
         </Link>
       </ul>
 
