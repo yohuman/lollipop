@@ -20,7 +20,6 @@ const Swiper = () => {
 
   const handleMove = useCallback(
     (e: any) => {
-      e.preventDefault();
       if (!ref.current.contains(e.target)) return;
       setDoClick(false);
       const mouseX = e.pageX - ref.current.offsetLeft;
@@ -61,9 +60,10 @@ const Swiper = () => {
 
   return (
     <header className="container">
-      {JSON.stringify(doClick)}
       <ul onScroll={handleScroll} ref={ref}>
-        <li id="item">Item 1</li>
+        <Link href="/about">
+          <li id="item">Item 1</li>
+        </Link>
         <li id="item">Item 2</li>
         <li id="item">Item 3</li>
         <li id="item">Item 4</li>
@@ -88,7 +88,7 @@ const Swiper = () => {
         }
         .left {
           position: absolute;
-          top: 110px;
+          top: 80px;
           width: 70px;
           height: 70px;
           border-radius: 50%;
@@ -98,7 +98,7 @@ const Swiper = () => {
         }
         .right {
           position: absolute;
-          top: 110px;
+          top: 80px;
           right: 0;
           width: 70px;
           height: 70px;
@@ -117,11 +117,16 @@ const Swiper = () => {
           display: grid;
           grid-gap: 10px;
           grid-template-columns: repeat(8, 260px);
+          padding-left: 50px;
         }
         ul::-webkit-scrollbar {
           background: #ebeced;
           height: 6px;
           margin: 0 20px;
+        }
+        ul::-webkit-scrollbar-button {
+          width: 25px;
+          background: white;
         }
         ul::-webkit-scrollbar-thumb {
           background: #c8cad0;
